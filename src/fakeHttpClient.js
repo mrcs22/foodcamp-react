@@ -33,6 +33,32 @@ const data = {
       price: " R$ 14,99",
     },
   ],
+  drinks: [
+    {
+      image: "./img/icedTea.jpg",
+      title: "Chá gelado",
+      description: "Copo 500ml",
+      price: "R$ 05,50",
+    },
+    {
+      image: "./img/juice.jpg",
+      title: "Suco",
+      description: "Copo 400ml",
+      price: "R$ 08,50",
+    },
+    {
+      image: "./img/soda.jpg",
+      title: "Refrigerante",
+      description: "Copo 350ml",
+      price: "R$ 04,90",
+    },
+    {
+      image: "./img/wine.jpg",
+      title: "Vinho",
+      description: "Taça 175ml",
+      price: "R$ 10,90",
+    },
+  ],
 };
 
 export default fakeHttpClient;
