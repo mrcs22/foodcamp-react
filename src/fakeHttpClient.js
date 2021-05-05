@@ -59,6 +59,32 @@ const data = {
       price: "R$ 10,90",
     },
   ],
+  foods: [
+    {
+      image: "./img/salad.jpg",
+      title: "Salada",
+      description: "Folhas frescas",
+      price: "R$ 10,50",
+    },
+    {
+      image: "./img/salmon.jpg",
+      title: "Salmão",
+      description: "Peixe com salada",
+      price: "R$ 24,99",
+    },
+    {
+      image: "./img/vegetableSkewer.jpg",
+      title: "Espetinho de legumes",
+      description: "Legumes assados",
+      price: "R$ 14,99",
+    },
+    {
+      image: "./img/spaghetti.jpg",
+      title: "Macarrão",
+      description: "Massa ao molho de tomate",
+      price: "R$ 15,00",
+    },
+  ],
 };
 
 export default fakeHttpClient;
