@@ -1,50 +1,43 @@
+import CardItem from "./CardItem";
+
 export default function DessertList() {
+  const desserts = [
+    {
+      image: "./img/waffle.jpg",
+      title: "Waffle",
+      description: "Waffle simples",
+      price: " R$ 10,99",
+    },
+    {
+      image: "./img/pie.jpg",
+      title: "Torta",
+      description: "Torta de morango",
+      price: " R$ 15,00",
+    },
+    {
+      image: "./img/chocolateCake.jpg",
+      title: "Bolo",
+      description: "Bolo de chocolate",
+      price: " R$ 12,50",
+    },
+    {
+      image: "./img/creamCake.jpg",
+      title: "Pavê",
+      description: "Pavê de cupuaçu",
+      price: " R$ 14,99",
+    },
+  ];
+
   return (
     <ul className="options" id="desserts">
-      <li>
-        <img src="./img/waffle.jpg" alt="Waffle" />
-        <div>
-          <strong>Waffle</strong>
-          <p>Waffle simples</p>
-          <p>
-            R$ 10,99
-            <ion-icon className="ocult" name="checkmark-circle"></ion-icon>
-          </p>
-        </div>
-      </li>
-      <li>
-        <img src="./img/pie.jpg" alt="Torta de morango" />
-        <div>
-          <strong>Torta</strong>
-          <p>Torta de morango</p>
-          <p>
-            R$ 15,00
-            <ion-icon className="ocult" name="checkmark-circle"></ion-icon>
-          </p>
-        </div>
-      </li>
-      <li>
-        <img src="./img/chocolateCake.jpg" alt="Bolo de chocolate" />
-        <div>
-          <strong>Bolo</strong>
-          <p>Bolo de chocolate</p>
-          <p>
-            R$ 12,50
-            <ion-icon className="ocult" name="checkmark-circle"></ion-icon>
-          </p>
-        </div>
-      </li>
-      <li>
-        <img src="./img/creamCake.jpg" alt="Pavê de cupuaçu" />
-        <div>
-          <strong>Pavê</strong>
-          <p>Pavê de cupuaçu</p>
-          <p>
-            R$ 14,99
-            <ion-icon className="ocult" name="checkmark-circle"></ion-icon>
-          </p>
-        </div>
-      </li>
+      {desserts.map((d) => (
+        <CardItem
+          image={d.image}
+          title={d.title}
+          description={d.description}
+          price={d.price}
+        />
+      ))}
     </ul>
   );
 }
