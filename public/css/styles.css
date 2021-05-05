@@ -106,7 +106,32 @@ li p:last-child {
   font-size: 16px;
   color: inherit;
 }
+li .counter {
+  display: none;
+  height: 1em;
+  flex-direction: row;
+}
 
+.selected .counter {
+  display: block !important;
+}
+
+li button {
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: inherit;
+}
+li button:first-child {
+  color: #cf2b2b;
+}
+
+li button:last-child {
+  color: #32b72f;
+}
 .selected {
   box-shadow: inset 0px 0px 0px 5px #32b72f;
 }
