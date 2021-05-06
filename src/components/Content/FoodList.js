@@ -1,7 +1,7 @@
 import CardItem from "./CardItem";
 import fakeHttpClient from "../../fakeHttpClient";
 
-export default function FoodList() {
+export default function FoodList(props) {
   const foods = fakeHttpClient.GET("www.my-fake-something/foods.com");
 
   return (
@@ -12,6 +12,7 @@ export default function FoodList() {
           title={f.title}
           description={f.description}
           price={f.price}
+          state={props.state}
         />
       ))}
     </ul>

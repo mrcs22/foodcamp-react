@@ -6,7 +6,6 @@ export default function Counter(props) {
         onClick={(event) => {
           setValue(value - 1);
           event.stopPropagation();
-          console.log(event);
         }}
       >
         -

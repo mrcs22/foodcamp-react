@@ -1,12 +1,19 @@
 import Header from "./components/Header";
 import Content from "./components/Content/Content";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 export default function App() {
+  const foodsState = useState([]);
+  const drinksState = useState([]);
+  const dessertsState = useState([]);
+
+  const states = { foodsState, drinksState, dessertsState };
+
   return (
     <>
       <Header />
-      <Content />
+      <Content data={states} />
       <Footer />
     </>
   );
