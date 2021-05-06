@@ -14,7 +14,7 @@ export default function App() {
     <>
       <Header />
       <Content data={states} />
-      <Footer />
+      <Footer data={states} />
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function CardItem(props) {
   const [counter, setCounter] = useState(1);
   const [isSelected, setIsSelected] = useState(false);
   const [selectedItemList, setSelectedItemList] = state;
-  const position = selectedItemList.findIndex((item) => item.title === title);
+  let position = selectedItemList.findIndex((item) => item.title === title);
 
   checkForResetSelection();
   checkForSelectedItemListUpdate();
@@ -35,6 +35,8 @@ export default function CardItem(props) {
       setSelectedItemList(
         selectedItemList.filter((_, index) => index !== position)
       );
+      position = -1;
+      setCounter(1);
     } else {
       setIsSelected(true);
 
@@ -51,8 +53,11 @@ export default function CardItem(props) {
   }
 
   function checkForSelectedItemListUpdate() {
-    const shouldUpdate =
-      counter > 1 && selectedItemList[position].counter !== counter;
+    let shouldUpdate = false;
+
+    if (position !== -1) {
+      shouldUpdate = selectedItemList[position].counter !== counter;
+    }
 
     if (shouldUpdate) {
       setSelectedItemList(
