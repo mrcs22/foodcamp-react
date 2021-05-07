@@ -17,7 +17,7 @@ export default function Footer(props) {
     isThereSelectedDessert && isThereSelectedDrink && isThereSelectedFood;
 
   return (
-    <div class="footer">
+    <div className="footer">
       <button
         onClick={() => setSholdChangePage(true)}
         id="finishSelectionButton"

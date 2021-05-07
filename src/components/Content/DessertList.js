@@ -6,8 +6,9 @@ export default function DessertList(props) {
 
   return (
     <ul className="options" id="desserts">
-      {desserts.map((d) => (
+      {desserts.map((d, i) => (
         <CardItem
+          key={i}
           image={d.image}
           title={d.title}
           description={d.description}

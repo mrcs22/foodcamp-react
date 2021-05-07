@@ -1,8 +1,6 @@
 import Header from "../components/Header";
 
 export default function VerifyOrder({ states }) {
-  console.clear();
-  console.log(states);
   const { foodsState, drinksState, dessertsState, setSholdChangePage } = states;
 
   let message = `Olá, gostaria de fazer o pedido:`;
@@ -16,22 +14,25 @@ export default function VerifyOrder({ states }) {
       <div className="delivery">
         <strong id="deliveryTitle">Revise seu pedido</strong>
         <div>
-          {foodsState[0].map((food) => (
+          {foodsState[0].map((food, i) => (
             <OrderItem
+              key={i}
               name={food.title}
               counter={food.counter}
               price={food.price}
             />
           ))}
-          {drinksState[0].map((drink) => (
+          {drinksState[0].map((drink, i) => (
             <OrderItem
+              key={i}
               name={drink.title}
               counter={drink.counter}
               price={drink.price}
             />
           ))}
-          {dessertsState[0].map((dessert) => (
+          {dessertsState[0].map((dessert, i) => (
             <OrderItem
+              key={i}
               name={dessert.title}
               counter={dessert.counter}
               price={dessert.price}

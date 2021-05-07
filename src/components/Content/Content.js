@@ -5,18 +5,8 @@ import DessertList from "./DessertList";
 export default function Content(props) {
   const { foodsState, drinksState, dessertsState } = props.data;
 
-  console.clear();
-  console.log("comida");
-  console.log(foodsState[0]);
-
-  console.log("bebida");
-  console.log(drinksState[0]);
-
-  console.log("sobremesa");
-  console.log(dessertsState[0]);
-
   return (
-    <div class="content">
+    <div className="content">
       <strong>Primeiro, seu prato</strong>
       <FoodList state={foodsState} />
       <strong>Agora, sua bebida</strong>
