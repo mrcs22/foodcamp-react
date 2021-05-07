@@ -35,6 +35,7 @@ strong {
   width: 100%;
   color: #fff;
   background-color: #cf2b2b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 40px;
   padding-top: 15px;
   padding-left: 15px;
@@ -56,7 +57,7 @@ strong {
 }
 
 .options {
-  margin-top: 50px;
+  margin-top: 7px;
   display: flex;
   overflow-x: scroll;
 }
@@ -87,17 +88,19 @@ li div {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 li strong {
   font-size: 16px;
   font-family: "Roboto";
   font-weight: bold;
+  text-align: left;
 }
 li p {
   font-size: 15px;
   color: #a6a6a6;
-  align-items: center;
+  text-align: left;
+  margin-bottom: 3px;
 }
 li p:last-child {
   width: 100%;
@@ -146,27 +149,74 @@ p > ion-icon {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0 auto;
+  margin-top: 123px;
+  margin-bottom: 40px;
   width: 377px;
-  height: 353px;
-  color: #fff;
+  min-height: 400px;
+}
+
+.delivery > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 377px;
+  min-height: 201px;
+  color: #000;
   font-family: "Roboto";
   font-size: 22px;
-  background-color: #50d074;
-  position: fixed;
-  left: calc(50% - 188px);
-  top: calc(50vh - 176px);
+  background-color: #fff;
+  margin: 33px 0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 }
+
+.delivery > div p {
+  margin-top: 10px;
+}
+
 .delivery strong {
   font-family: inherit;
   font-weight: bold;
 }
+
+.delivery > strong:first-child {
+  display: inline-block;
+  width: 100%;
+  font-family: "Righteous";
+  font-weight: normal;
+  font-size: 26px;
+  text-align: left;
+}
+
+.delivery > strong:last-child {
+  line-height: 23.44px;
+  font-size: 20px;
+  color: #777;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 .delivery p {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.delivery button {
+  width: 329px;
+  height: 52px;
+  border-radius: 50px;
+  background-color: #50d074;
+  border: none;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  transition: background-color 700ms;
 }
 
 input {
@@ -223,7 +273,7 @@ button {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
-  transition: 600ms;
+  transition: background-color 700ms;
 }
 button:disabled {
   background-color: #cbcbcb;
