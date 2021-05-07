@@ -1,15 +1,12 @@
 import Header from "../components/Header";
 
 export default function VerifyOrder({ states }) {
-  const orders = JSON.parse(localStorage.getItem("foodcampData"));
-
-  const [foods, drinks, desserts] = orders;
+  console.clear();
+  console.log(states);
+  const { foodsState, drinksState, dessertsState, setSholdChangePage } = states;
 
   let message = `Olá, gostaria de fazer o pedido:`;
   let total = 0;
-
-  console.clear();
-  console.log(foods);
 
   makeOrderData();
 
@@ -19,21 +16,21 @@ export default function VerifyOrder({ states }) {
       <div className="delivery">
         <strong id="deliveryTitle">Revise seu pedido</strong>
         <div>
-          {foods.map((food) => (
+          {foodsState[0].map((food) => (
             <OrderItem
               name={food.title}
               counter={food.counter}
               price={food.price}
             />
           ))}
-          {drinks.map((drink) => (
+          {drinksState[0].map((drink) => (
             <OrderItem
               name={drink.title}
               counter={drink.counter}
               price={drink.price}
             />
           ))}
-          {desserts.map((dessert) => (
+          {dessertsState[0].map((dessert) => (
             <OrderItem
               name={dessert.title}
               counter={dessert.counter}
@@ -64,12 +61,12 @@ export default function VerifyOrder({ states }) {
   }
 
   function makeOrderData() {
-    registerOrdersAndUpdateTotal(foods, "Prato");
-    registerOrdersAndUpdateTotal(drinks, "Bebida");
-    registerOrdersAndUpdateTotal(desserts, "Sobremesa");
+    registerOrdersAndUpdateTotal(foodsState[0], "Prato");
+    registerOrdersAndUpdateTotal(drinksState[0], "Bebida");
+    registerOrdersAndUpdateTotal(dessertsState[0], "Sobremesa");
 
     message += `\nTotal: R$ ${total.toFixed(2)}`;
-    console.log(message);
+
     message = encodeURIComponent(message);
   }
 
@@ -91,6 +88,9 @@ export default function VerifyOrder({ states }) {
   }
 
   function cancelOrder() {
-    window.location.href = "/";
+    foodsState[1]([]);
+    drinksState[1]([]);
+    dessertsState[1]([]);
+    setSholdChangePage(false);
   }
 }

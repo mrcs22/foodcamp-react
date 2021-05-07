@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
-
 export default function Footer(props) {
-  const { foodsState, drinksState, dessertsState } = props.data;
+  const {
+    foodsState,
+    drinksState,
+    dessertsState,
+    setSholdChangePage,
+  } = props.data;
   const [foods] = foodsState;
   const [drinks] = drinksState;
   const [desserts] = dessertsState;
@@ -16,7 +19,7 @@ export default function Footer(props) {
   return (
     <div class="footer">
       <button
-        onClick={finishOrder}
+        onClick={() => setSholdChangePage(true)}
         id="finishSelectionButton"
         disabled={!shouldEnableButton}
         to="/verify-orders"
@@ -27,17 +30,4 @@ export default function Footer(props) {
       </button>
     </div>
   );
-
-  function finishOrder() {
-    saveOrderToLocalStorage();
-
-    window.location.href = `/verify-order`;
-  }
-
-  function saveOrderToLocalStorage() {
-    localStorage.setItem(
-      "foodcampData",
-      JSON.stringify([[...foods], [...drinks], [...desserts]])
-    );
-  }
 }
